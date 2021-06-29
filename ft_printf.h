@@ -17,7 +17,7 @@ typedef struct s_print
 	va_list  args;	//conteudo para impressão		  
 	int   wdt;	  // size, tamanho, largura, width, wdt
 	int   prc;	  // precisão	  
-	int   zero;	 // veio zero	 
+	int   zero;	 // zero	 
 	int   pnt;	  // ponto . 
 	int   dash;	 // - traço 
 	int   tl;	// total_length (return value)	  
