@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 20:54:46 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/29 21:03:52 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/30 15:03:23 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 t_print *ft_initialise(t_print *arrow)			     
 {			     
-	arrow->wdt = 0;	  # colocamos tudo apontando para 0, false	  
-	arrow->prc = 0;
+	arrow->wdt = 0;	  // colocamos tudo apontando para 0, false	  
+	arrow->prc = 0;   // vamos clc como 0, durante as funções
 	arrow->zero = 0;
 	arrow->pnt = 0;
 	arrow->sign = 0;
@@ -43,18 +43,20 @@ int	ft_printf(const char *sms, ...)
 	if (content == NULL)
 		return (-1);
 	ft_initialise(content);
-	va_start(content->args, sms);
+	va_start(content->args, sms);  // passamos a variavel arg primeiro, depois o ultimo elemento conhecido em nosso
 	count = 0;
 	nothing = 0;
-	while (sms[count])
+	while (sms[count]) // while string não acabou
 	{
 		if (sms[count] == '%')
-			count = ft_verific_symb(content, sms, count + 1);
+			count = ft_verific_symb(content, sms, count + 1);	// ' ', '0', '', '-' ou '.' (count + 1 pq ele cmc a verificar depois do %)
+																// se é um digito
 		else
+			// se n for o % write o que ta la
 			write(1, &sms[count], 1);
 	  count++;
 	}
 	va_end(content->args);
 	free(content);
-	return (nothing);
+	return (nothing); //! a função printf() retorna um inteiro que nós nunca usamos para nada. Ele é descartado.
 }
