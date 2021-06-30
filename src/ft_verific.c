@@ -6,20 +6,20 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/29 20:54:16 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/30 15:09:35 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "print.f"
 
-int 	ft_verific_letter(va_list *content, const char *sms, int cont)
+int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 {
 	if (sms[cont] == 'c')
 		to_char(content);
 }
 
 // while n é o udcsupxX%
-int		ft_verific_symb(va_list *content, const char *sms, int cont)
+int		ft_verific_symb(t_print *content, const char *sms, int cont)
 {
 	while (!(ft_isalpha(sms[cont]) || sms[cont] == '%'))
 	{
