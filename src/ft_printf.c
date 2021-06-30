@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 20:54:46 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/30 15:03:23 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/30 15:05:45 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 t_print *ft_initialise(t_print *arrow)			     
 {			     
 	arrow->wdt = 0;	  // colocamos tudo apontando para 0, false	  
-	arrow->prc = 0;   // vamos clc como 0, durante as funções
+	arrow->prc = 0;   // vamos clc como 1, durante as funções
 	arrow->zero = 0;
 	arrow->pnt = 0;
 	arrow->sign = 0;
@@ -56,7 +56,7 @@ int	ft_printf(const char *sms, ...)
 			write(1, &sms[count], 1);
 	  count++;
 	}
-	va_end(content->args);
+	va_end(content->args); //se deu start, tem q da end no final da função
 	free(content);
 	return (nothing); //! a função printf() retorna um inteiro que nós nunca usamos para nada. Ele é descartado.
 }
