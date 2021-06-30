@@ -25,10 +25,10 @@ typedef struct s_print
 	int   is_zero;	//  numer zero		   
 	int   porc;	// %	   
 	int   spa;	// space flag ' '	  
-}	va_list;
+}	t_print;
 
-ft_printf(const char *sms, ...);
+int			ft_printf(const char *sms, ...);
 t_print 	*ft_initialise(t_print *arrow);
-int			(va_list *content, const char *sms, int cont;
+int			(t_print *content, const char *sms, int cont;
 
 # endif
