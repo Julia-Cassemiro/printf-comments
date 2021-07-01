@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/01 16:32:29 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:42:40 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 	return (cont);
 }
 
-// while n é o udcsupxX%
+// while n é o dcspxX%
 int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos cmc o check, poisção
 {
 	while (!(ft_isalpha(sms[cont]) || sms[cont] == '%'))
