@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/01 15:55:10 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/01 17:46:46 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,7 @@ LIBFT_LIB	=		libft.a
 SRC_FILES	= \
 	./src/brprint.c \
 	./src/ft_verific.c \
-	./src/ft_maybe_estrelinha.c \
-	./src/ft_maybe_precision.c \
-	./src/ft_maybe_tracinho.c \
-	./src/ft_maybe_width.c \
-	./src/ft_maybe_zero.c \
+	./src/ft_maybe.c \
 	./src/to_char.c \
 	./src/to_string.c \
 	
