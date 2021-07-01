@@ -31,4 +31,5 @@ int		ft_isalpha (int c);
 int		ft_isdigit(int c);
 int		ft_numlen(long n);
 size_t	ft_strlen(const char *str);
+
 #endif
