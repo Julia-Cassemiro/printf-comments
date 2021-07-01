@@ -6,11 +6,11 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/01 17:46:13 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 17:53:18 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
 int 	ft_verific_letter(t_print *content, const char *sms, int cont)

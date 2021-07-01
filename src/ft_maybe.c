@@ -6,11 +6,11 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/01 16:42:16 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 17:53:11 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
 
