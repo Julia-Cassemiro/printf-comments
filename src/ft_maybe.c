@@ -6,11 +6,12 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/30 16:17:14 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:31:52 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print.f"
+#include "../includes/printf.h"
+#include "../libft/libft.h"
 
 int ft_maybe_zero(t_print *content, const char *sms, int cont)
 {
@@ -21,14 +22,14 @@ int ft_maybe_zero(t_print *content, const char *sms, int cont)
 	content->zero = 1;
 	if (ft_isdigit(sms[cont]))
 	{
-		count = ft_atoi(sms[cont]);
+		count = ft_atoi(&sms[cont]);
 		cont = cont + ft_numlen(count);
 	}
 	content->wdt = count;
 	return (cont);
 }
 
-ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
+int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 {
     cont++;//verifica o proximo
 	//se n tem ponto, o * é o width
@@ -44,7 +45,7 @@ ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 	return (cont);
 }
 
-ft_maybe_precision(t_print *content, const char *sms, int cont)
+int	ft_maybe_precision(t_print *content, const char *sms, int cont)
 {
 	int count;
 
@@ -53,7 +54,7 @@ ft_maybe_precision(t_print *content, const char *sms, int cont)
 	content->pnt = 1;
 	if (ft_isdigit(sms[cont])) //if veio o numero depois
 	{
-		count = ft_atoi(sms[cont]);
+		count = ft_atoi(&sms[cont]);
 		cont = cont + ft_numlen(count); //o num len retorna a qntd de caracteres certo para impressão
 	}
 	content->prc = count; //retorna a qnd de caracteres necessarios para imprimir
@@ -64,23 +65,23 @@ ft_maybe_precision(t_print *content, const char *sms, int cont)
 	return (cont);
 }
 
-ft_maybe_width(t_print *content, const char sms, int cont)
+int	ft_maybe_width(t_print *content, const char *sms, int cont)
 {
 	int count;
 
 	count = 0;
 	if (ft_isdigit(sms[cont]))
 	{
-		count = ft_atoi(sms[cont]); //passa a string pra um numero inteiro
+		count = ft_atoi(&sms[cont]); //passa a string pra um numero inteiro
 		cont = cont + ft_numlen(count); // retorna a qnd de caracteres necessarios para imprimir n
 	}
-	content->width = count;
+	content->wdt = count;
 	if (sms[cont] == '.')
-		cont = ft_precision(content, sms, cont);
+		cont = ft_maybe_precision(content, sms, cont);
 	return (cont);
 }
 
-ft_maybe_tracinho(t_print *content, const char *sms, int cont)
+int ft_maybe_tracinho(t_print *content, const char *sms, int cont)
 {
 	cont++;
 	if(content->dash == 1) //o - pode repetir varias vezes
@@ -90,7 +91,7 @@ ft_maybe_tracinho(t_print *content, const char *sms, int cont)
 		return (cont);
 	}
 	content->dash = 1;
-	content->zero = 0; //'-' substitui '0' se ambos forem usados.
+	// content->zero = 0;
 	while (sms[cont] == '-' || sms[cont] == '0')
 		cont++;
 	cont = ft_maybe_width(content, sms, cont); //vai la ver se tem width

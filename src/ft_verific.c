@@ -6,20 +6,24 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/30 15:09:35 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:32:29 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print.f"
+#include "../includes/printf.h"
+#include "../libft/libft.h"
 
 int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 {
 	if (sms[cont] == 'c')
 		to_char(content);
+	if (sms[cont] == 's')
+		to_string(content);
+	return (cont);
 }
 
 // while n é o udcsupxX%
-int		ft_verific_symb(t_print *content, const char *sms, int cont)
+int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos cmc o check, poisção
 {
 	while (!(ft_isalpha(sms[cont]) || sms[cont] == '%'))
 	{
@@ -31,11 +35,10 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)
 			cont = ft_maybe_precision(content, sms, cont);
 		if (sms[cont] == '*')
 			cont = ft_maybe_estrelinha(content, sms, cont);
-		if (ft_isdigit(sms[cont])) 
+		if (ft_isdigit(sms[cont])) //if tem um numero la, define o width
 			cont = ft_maybe_width(content, sms, cont);
 		
 	}
 	ft_verific_letter(content, sms, cont);
-	ft_reset(content);
 	return (cont);
 }
