@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/01 16:20:05 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/01 16:41:43 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC		=		ft_atoi.c \
 				ft_strlen.c \
 	
 OBJ		=		$(SRC:.c=.o)
-
 
 CC		=	gcc
 FLAG	=	-Wall -Wextra -Werror
