@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 20:54:46 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/30 15:05:45 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:42:24 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ int	ft_printf(const char *sms, ...)
 	}
 	va_end(content->args); //se deu start, tem q da end no final da função
 	free(content);
-	return (nothing); //! a função printf() retorna um inteiro que nós nunca usamos para nada. Ele é descartado.
+	return (nothing); //! a função printf() retorna um inteiro que nós nunca usamos para nada. Ele é descartado
 }
