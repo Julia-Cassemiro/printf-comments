@@ -6,11 +6,11 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/01 17:46:46 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/05 16:36:09 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		print.f
+NAME		=		libftprintf.a
 SRC_PATH	=		src/
 
 LIBFT_PATH	=		libft/
@@ -23,7 +23,10 @@ SRC_FILES	= \
 	./src/ft_maybe.c \
 	./src/to_char.c \
 	./src/to_string.c \
-	
+	./src/to_hexa.c \
+	./src/to_int.c \
+	./src/to_unsigned.c \
+
 SRC_OBJS     = ${SRC_FILES:.c=.o}
 
 CC         = gcc

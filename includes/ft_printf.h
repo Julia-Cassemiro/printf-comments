@@ -40,7 +40,7 @@ void	to_string(t_print *content);
 void	to_int(t_print *content);
 void 	to_hexa(t_print *content, int cont);
 void	to_unsigned(t_print *content);
-int		check_sign(t_print *content, int i, char *nbr, int len);
+void	check_sign(t_print *content, int i);
 
 
 # endif
