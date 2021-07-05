@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/01 17:53:18 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/05 16:03:58 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 	if (sms[cont] == 's')
 		to_string(content);
 	return (cont);
+	if (sms[cont] == 'd' || sms[cont] == 'i')
+		to_int(content);
+	if (sms[cont] == 'u')
+		to_unsigned(content);
+	if (sms[cont] == 'x' || sms[cont] == 'X')
+		to_hexa(content, sms[cont] - 23);
 }
 
 // while n é o dcspxX%
