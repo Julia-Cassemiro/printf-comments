@@ -37,5 +37,10 @@ int		ft_maybe_precision(t_print *content, const char *sms, int cont);
 int		ft_maybe_estrelinha(t_print *content, const char *sms, int cont);
 void	to_char(t_print *content);
 void	to_string(t_print *content);
+void	to_int(t_print *content);
+void 	to_hexa(t_print *content, int cont);
+void	to_unsigned(t_print *content);
+int		check_sign(t_print *content, int i, char *nbr, int len);
+
 
 # endif
