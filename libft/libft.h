@@ -33,8 +33,6 @@ int			ft_numlen(long n);
 size_t		ft_strlen(const char *str);
 char		*ft_itoa(int n);
 char		*ft_utoa(unsigned int n);
-static long	ft_getunit(long n, int unit);
-static int	ft_nbsize(long n);
 int			ft_numlen_base(unsigned long n, int base);
 char		*ft_hexatoi(char *str, unsigned long n, int base, int c);
 
