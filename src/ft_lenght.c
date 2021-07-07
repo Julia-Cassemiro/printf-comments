@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/07 02:22:36 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:38:35 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,25 @@
 
 void	ft_update_lenght(t_print *content, int len)
 {
-	if (content->sign) //if o é negativo
+	if (content->sign)
 	{
-		if (content->wdt) //wdt fica cm -1, pq um dos espaços é pro -
+		if (content->wdt)
 			content->wdt -= 1;
 	}
 	if (content->prc > 0)
-		content->zero = 0; //0 flag ignored with precision
-	if (content->wdt && content->wdt >= content->prc) //se o width é maior q a precisão
+		content->zero = 0;
+	if (content->wdt && content->wdt >= content->prc)
 	{
-		if (content->prc > len) //se a minha prc for maior q o len
-			content->prc -= len; //ela preenche só oq falta
+		if (content->prc > len)
+			content->prc -= len;
+		else
+			content->prc = 0;
 		if (!content->is_zero)
-			content->wdt = content->wdt - content->prc - len; //result é o preenchimento correto
+			content->wdt = content->wdt - content->prc - len;
 	}
-	else if (content->prc > content->wdt) //se a prc for maior q o wdt
+	else if (content->prc > content->wdt)
 	{
-		content->wdt = 0; //adeus wdt
-		content->prc -= len; //precisão preenche o len
+		content->wdt = 0;
+		content->prc -= len;
 	}
 }
