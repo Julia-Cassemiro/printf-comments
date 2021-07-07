@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/07 02:46:17 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:47:26 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_check_width(t_print *content)
 	}
 }
 
-int	ft_estrelinha(t_print *content, const char *sms, int cont)
+int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 {
     cont++;//verifica o proximo
 	//se n tem ponto, o * é o width
