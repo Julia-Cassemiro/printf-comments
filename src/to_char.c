@@ -6,14 +6,14 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 21:21:30 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/07 02:22:22 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:25:52 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void	to_char(t_print *content)
+void	ft_to_char(t_print *content)
 {
 	char	c;
 

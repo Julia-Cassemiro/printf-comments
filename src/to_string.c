@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:31:05 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/01 17:53:31 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:26:17 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../libft/libft.h"
 
 
-void	to_string(t_print *content)
+void	ft_to_string(t_print *content)
 {
 	char	*s;
 	int		count;

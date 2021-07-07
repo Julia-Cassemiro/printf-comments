@@ -6,14 +6,14 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:46 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/05 16:38:11 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:26:05 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void to_hexa(t_print *content, int cont)
+void ft_to_hexa(t_print *content, int cont)
 {
 	unsigned int	x;
 	int				len;

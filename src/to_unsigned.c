@@ -6,14 +6,14 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:51:35 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/05 17:04:03 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:26:22 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void	to_unsigned(t_print *content)
+void	ft_to_unsigned(t_print *content)
 {
 	int count;
 	unsigned int u;

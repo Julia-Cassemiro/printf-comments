@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:56 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/05 16:59:56 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:26:11 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	check_sign(t_print *content, int i)
 		content->tl = write (1, &nbr[count++], 1);
 }
 
-void	to_int(t_print *content)
+void	ft_to_int(t_print *content)
 {
 	int count;
 	int i;
