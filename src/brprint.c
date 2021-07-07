@@ -45,13 +45,3 @@ int	ft_printf(const char *sms, ...)
 	free(content);
 	return (nothing);
 }
-
-//! a função printf() retorna um inteiro que nós nunca usamos para nada. Ele é descartado.
-// c = va_arg (args, int) 
-// s = va_arg (args, char *) 
-// d = va_arg (args, int) 
-// i = va_arg (args, int) 
-// u = va_arg (args, sem sinal int) 
-// p = va_arg (args, sem sinal longo ) # (sem sinal longo) va_arg (args, void *); 
-// x = va_arg (args, unsigned int) 
-// X = va_arg (args, unsigned int)

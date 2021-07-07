@@ -41,7 +41,8 @@ void	ft_to_int(t_print *content);
 void 	ft_to_hexa(t_print *content, int cont);
 void	ft_to_unsigned(t_print *content);
 void	ft_check_sign(t_print *content, int i);
-void	ft_check_width(t_print *tab)
+void	ft_check_width(t_print *content);
+void	ft_update_lenght(t_print *content, int len);
 
 
 

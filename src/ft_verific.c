@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/05 21:43:20 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/07 02:19:56 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 {
 	if (sms[cont] == 'c')
-		to_char(content);
+		ft_to_char(content);
 	if (sms[cont] == 's')
-		to_string(content);
+		ft_to_string(content);
 	return (cont);
 	if (sms[cont] == 'd' || sms[cont] == 'i')
-		to_int(content);
+		ft_to_int(content);
 	if (sms[cont] == 'u')
-		to_unsigned(content);
+		ft_to_unsigned(content);
 	if (sms[cont] == 'x' || sms[cont] == 'X')
-		to_hexa(content, sms[cont] - 23);
+		ft_to_hexa(content, sms[cont] - 23);
 }
 
 // while n é o cspdiuxX%
