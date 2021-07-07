@@ -35,12 +35,14 @@ int		ft_maybe_width(t_print *content, const char *sms, int cont);
 int 	ft_maybe_tracinho(t_print *content, const char *sms, int cont);
 int		ft_maybe_precision(t_print *content, const char *sms, int cont);
 int		ft_maybe_estrelinha(t_print *content, const char *sms, int cont);
-void	to_char(t_print *content);
-void	to_string(t_print *content);
-void	to_int(t_print *content);
-void 	to_hexa(t_print *content, int cont);
-void	to_unsigned(t_print *content);
-void	check_sign(t_print *content, int i);
+void	ft_to_char(t_print *content);
+void	ft_to_string(t_print *content);
+void	ft_to_int(t_print *content);
+void 	ft_to_hexa(t_print *content, int cont);
+void	ft_to_unsigned(t_print *content);
+void	ft_check_sign(t_print *content, int i);
+void	ft_check_width(t_print *tab)
+
 
 
 # endif

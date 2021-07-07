@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/05 16:03:58 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:43:20 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 		to_hexa(content, sms[cont] - 23);
 }
 
-// while n é o dcspxX%
+// while n é o cspdiuxX%
 int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos cmc o check, poisção
 {
 	while (!(ft_isalpha(sms[cont]) || sms[cont] == '%'))
