@@ -5,7 +5,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h>
-#include "libft.h"
+# include "libft.h"
 
 //CRIA UMA ESTRUTURA IGUAL FOI CRIADO NA GNL
 // a gente faz isso pq o print f printa em varios formatos, e são as flags que vão nos proporcionar isso

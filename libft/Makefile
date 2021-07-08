@@ -6,10 +6,11 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/05 15:58:08 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/08 02:47:13 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+INCLUDES = ./
 NAME	=		libft.a
 SRC		=		ft_atoi.c \
 				ft_isalpha.c \
@@ -21,20 +22,18 @@ SRC		=		ft_atoi.c \
 				ft_hexatoi.c \
 				ft_numlen_base.c \
 	
-OBJ		=		$(SRC:.c=.o)
+OBJ		=		$(SRC:%.c=%.o)
 
 CC		=	gcc
 FLAG	=	-Wall -Wextra -Werror
-AR		=	ar -rcs
 RM		=	rm -f
 
+$(NAME):
+	$(CC) $(FLAG) $(SRC) -c -I$(INCLUDES)
+	ar -rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
 all: $(NAME)
-
-$(NAME): $(OBJ) 
-	$(AR) $(NAME) $(OBJ) 
-
-$(OBJ): $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
 
 clean:
 	$(RM) $(OBJ)
