@@ -27,6 +27,7 @@ int	ft_printf(const char *sms, ...)
 	content = (t_print *)malloc(sizeof(t_print));
 	if (!content)
 		return (-1);
+	nothing = 0;
 	ft_initialise(content);
 	va_start(content->args, sms); // passamos a variavel arg primeiro, depois o ultimo elemento conhecido em nosso
 	count = 0;
