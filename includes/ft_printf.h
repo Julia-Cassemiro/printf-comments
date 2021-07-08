@@ -28,6 +28,7 @@ typedef struct s_print
 
 int		ft_printf(const char *sms, ...);
 t_print *ft_initialise(t_print *arrow);
+t_print *ft_reset(t_print *arrow);
 int		ft_verific_symb(t_print *content, const char *sms, int cont);
 int 	ft_verific_letter(t_print *content, const char *sms, int cont);
 int 	ft_maybe_zero(t_print *content, const char *sms, int cont);

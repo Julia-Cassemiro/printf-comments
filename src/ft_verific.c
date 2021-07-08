@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 18:18:54 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/08 19:34:55 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 {
 	if (sms[cont] == 'c')
 	 	ft_to_char(content);
-	else if (sms[cont] == 's')
-		ft_to_string(content);
-	else if (sms[cont] == 'd' || sms[cont] == 'i')
- 		ft_to_int(content);
-	else if (sms[cont] == 'u')
-	 	ft_to_unsigned(content);
-	else if (sms[cont] == 'x' || sms[cont] == 'X')
-	 	ft_to_hexa(content, sms[cont] - 23);
+	// else if (sms[cont] == 's')
+	// 	ft_to_string(content);
+	// else if (sms[cont] == 'd' || sms[cont] == 'i')
+	// 	ft_to_int(content);
+	// else if (sms[cont] == 'u')
+	//  	ft_to_unsigned(content);
+	// else if (sms[cont] == 'x' || sms[cont] == 'X')
+ 	// 	ft_to_hexa(content, sms[cont] - 23);
 	return (cont);
 }
 
@@ -46,5 +46,6 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos 
 		
 	}
 	ft_verific_letter(content, sms, cont);
+	ft_reset(content);
 	return (cont);
 }

@@ -1,5 +1,18 @@
 #include "../includes/ft_printf.h"
 
+t_print *ft_reset(t_print *arrow)
+{			     
+	arrow->wdt = 0;
+	arrow->prc = 0;
+	arrow->zero = 0;
+	arrow->pnt = 0;
+	arrow->sign = 0;
+	arrow->is_zero = 0;
+	arrow->dash = 0;
+	arrow->porc = 0;
+	return (arrow);			     
+}
+
 t_print *ft_initialise(t_print *arrow)
 {
 	arrow->wdt = 0;
@@ -24,13 +37,13 @@ int	ft_printf(const char *sms, ...)
 	// *primeira coisa q sempre fazemos é conferir se ta certo
     if (!sms)
 	  return (0);
+	nothing = 0;
 	content = (t_print *)malloc(sizeof(t_print));
 	if (!content)
 		return (-1);
-	nothing = 0;
 	ft_initialise(content);
-	va_start(content->args, sms); // passamos a variavel arg primeiro, depois o ultimo elemento conhecido em nosso
 	count = 0;
+	va_start(content->args, sms); // passamos a variavel arg primeiro, depois o ultimo elemento conhecido em nosso
 	while (sms[count]) // while string não acabou
 	{
 		if (sms[count] == '%')
@@ -38,7 +51,7 @@ int	ft_printf(const char *sms, ...)
 														// se é um digito
 		else
 			// se n for o % write o que ta la
-			write(1, &sms[count], 1);
+			nothing += write(1, &sms[count], 1);
 	  count++;
 	}
 	nothing += content->tl; 
@@ -46,3 +59,4 @@ int	ft_printf(const char *sms, ...)
 	free(content);
 	return (nothing);
 }
+
