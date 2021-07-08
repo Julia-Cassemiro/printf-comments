@@ -22,15 +22,14 @@ int	ft_printf(const char *sms, ...)
 	int			count; //sempre usamos um count Julia
 
 	// *primeira coisa q sempre fazemos é conferir se ta certo
-    if (sms == NULL)
-	  return (-1);
+    if (!sms)
+	  return (0);
 	content = (t_print *)malloc(sizeof(t_print));
-	if (content == NULL)
+	if (!content)
 		return (-1);
 	ft_initialise(content);
 	va_start(content->args, sms); // passamos a variavel arg primeiro, depois o ultimo elemento conhecido em nosso
 	count = 0;
-	nothing = 0; //precisamos iniciar ambos
 	while (sms[count]) // while string não acabou
 	{
 		if (sms[count] == '%')
@@ -41,6 +40,7 @@ int	ft_printf(const char *sms, ...)
 			write(1, &sms[count], 1);
 	  count++;
 	}
+	nothing += content->tl; 
 	va_end(content->args);
 	free(content);
 	return (nothing);
