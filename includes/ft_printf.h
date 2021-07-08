@@ -43,7 +43,9 @@ void	ft_to_unsigned(t_print *content);
 void	ft_check_sign(t_print *content, int i);
 void	ft_check_width(t_print *content);
 void	ft_update_lenght(t_print *content, int len);
-
+void	ft_write_nothing(t_print *content);
+int		ft_lenght_string(char *s, t_print *content, int len);
+void	ft_right_string(t_print *concontent, int len);
 
 
 # endif
