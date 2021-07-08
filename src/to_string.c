@@ -6,20 +6,12 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:31:05 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 04:54:09 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/08 18:38:54 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
-
-int	ft_lenght_string(char *s, t_print *content, int len)
-{
-	if (content->prc > 0 && len > content->prc)
-		len = content->prc;
-	len = ft_strlen(s);
-	return (len);
-}
 
 void	ft_write_nothing(t_print *content)
 {	
