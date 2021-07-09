@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 02:37:22 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/08 21:35:59 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_maybe_precision(t_print *content, const char *sms, int cont)
 	if (ft_isdigit(sms[cont])) //if veio o numero depois
 	{
 		count = ft_atoi(&sms[cont]);
-		cont = cont + ft_numlen(count); //o num len retorna a qntd de caracteres certo para impressão
+		cont +=ft_numlen(count); //o num len retorna a qntd de caracteres certo para impressão
 	}
 	content->prc = count; //retorna a qnd de caracteres necessarios para imprimir
 	if (sms[cont] == '*')
@@ -93,7 +93,7 @@ int	ft_maybe_width(t_print *content, const char *sms, int cont)
 	if (ft_isdigit(sms[cont]))
 	{
 		count = ft_atoi(&sms[cont]); //passa a string pra um numero inteiro
-		cont = cont + ft_numlen(count); // retorna a qnd de caracteres necessarios para imprimir n
+		cont += ft_numlen(count); // retorna a qnd de caracteres necessarios para imprimir n
 	}
 	content->wdt = count; //o nosso wdt fica cm o valor q tem a qntd de caracteres para ser impresso no minimo
 	if (sms[cont] == '.')
