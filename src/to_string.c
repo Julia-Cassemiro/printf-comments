@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:31:05 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 18:38:54 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/08 20:47:29 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	ft_to_string(t_print *content)
 		ft_right_string(content, len);
 	if (content-> prc > 0) //se tem precisão
 		while (s[count] && content->prc--)
-			content->tl = write(1, &s[count++], 1); // digita a string, enqt a precisão é preenchida
+			content->tl += write(1, &s[count++], 1); // digita a string, enqt a precisão é preenchida
 	else //caso n tenha precisão
 		while (s[count])
-			content->tl = write(1, &s[count++], 1); //digita a string
+			content->tl += write(1, &s[count++], 1); //digita a string
 	if (content->dash) // se tem a flag -, é necessario digitar " ", só depois da string ja estar la
 		while (content->wdt-- > len)
-			content->tl = write(1, " ", 1);
+			content->tl += write(1, " ", 1);
 	// if !-, fica do lado direito
 	// if -, fica do lado esquerdo
 }
