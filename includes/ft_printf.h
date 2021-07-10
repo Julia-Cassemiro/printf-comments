@@ -22,8 +22,8 @@ typedef struct s_print
 	int   dash;	 // - traço 
 	int   tl;	// total_length (return value)	  
 	int   sign;	// pos ou neg numero	   
-	int   is_zero;	//  numer zero		   
-	int   porc;	// %	   
+	int   is_zero;	//  numer zero		
+	int	  porc;  	   
 }	t_print;
 
 int		ft_printf(const char *sms, ...);
@@ -41,7 +41,8 @@ void	ft_to_string(t_print *content);
 void	ft_to_int(t_print *content);
 void 	ft_to_hexa(t_print *content, int cont);
 void	ft_to_unsigned(t_print *content);
-int	ft_check_sign(t_print *content, int i);
+void	ft_to_percent(t_print *content);
+int		ft_check_sign(t_print *content, int i);
 void	ft_check_width(t_print *content);
 void	ft_update_lenght(t_print *content, int len);
 int		ft_lenght_string(char *s, t_print *content, int len);

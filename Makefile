@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/07 02:21:39 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/09 22:06:46 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC_FILES	= \
 	./src/to_string.c \
 	./src/to_hexa.c \
 	./src/to_int.c \
+	./src/to_percentage.c \
 	./src/to_unsigned.c \
 	./src/ft_lenght.c \
 
