@@ -6,9 +6,10 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 21:35:59 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/09 18:54:22 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
@@ -44,7 +45,7 @@ int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 {
     cont++;//verifica o proximo
 	//se n tem ponto, o * é o width
-    if (!(content->pnt))  // ou seja, se não tem ponto, n tem precisão (n tem um tamanho certo para impressão)
+    if (!content->pnt)  // ou seja, se não tem ponto, n tem precisão (n tem um tamanho certo para impressão)
 	{
 		content->wdt = va_arg(content->args, int); // ela pega o proximo argumento
 		ft_check_width(content);
@@ -57,11 +58,12 @@ int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 			content->pnt = 0;
 	}
 	if (sms[cont] == '.')
-		ft_maybe_precision(content, sms, cont);
+		cont = ft_maybe_precision(content, sms, cont);
 	while (sms[cont] == '*')
 		cont++;
 	return (cont);
 }
+
 
 int	ft_maybe_precision(t_print *content, const char *sms, int cont)
 {
@@ -71,7 +73,11 @@ int	ft_maybe_precision(t_print *content, const char *sms, int cont)
 	cont++;
 	content->pnt = 1;
 	while (sms[cont] == '0' || sms[cont] == '-' || sms[cont] == '.')
+	{
 		cont++;
+		if (content->prc == 0 && content->zero == 1)
+			content->zero = 0;
+	}
 	if (ft_isdigit(sms[cont])) //if veio o numero depois
 	{
 		count = ft_atoi(&sms[cont]);

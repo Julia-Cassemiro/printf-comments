@@ -52,7 +52,7 @@ int	ft_printf(const char *sms, ...)
 		else
 			// se n for o % write o que ta la
 			nothing += write(1, &sms[count], 1);
-	  count++;
+	count++;
 	}
 	nothing += content->tl; 
 	va_end(content->args);

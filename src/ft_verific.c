@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 21:39:07 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/09 04:26:56 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 	if (sms[cont] == 'c')
 	 	ft_to_char(content);
 	else if (sms[cont] == 's')
-	 	ft_to_string(content);
+	  	ft_to_string(content);
 	else if (sms[cont] == 'd' || sms[cont] == 'i')
 	 	ft_to_int(content);
 	else if (sms[cont] == 'u')
-	  	ft_to_unsigned(content);
+	   	ft_to_unsigned(content);
 	else if (sms[cont] == 'x' || sms[cont] == 'X')
- 	 	ft_to_hexa(content, sms[cont] - 23);
+ 	  	ft_to_hexa(content, sms[cont] - 23);
 	return (cont);
 }
 
@@ -35,13 +35,13 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos 
 	{
 		if (sms[cont] == '-')
 			cont = ft_maybe_tracinho(content, sms, cont);
-		if (sms[cont] == '0')
+		else if (sms[cont] == '0')
 			cont = ft_maybe_zero(content, sms, cont);
-		if (sms[cont] == '.')
+		else if (sms[cont] == '.')
 			cont = ft_maybe_precision(content, sms, cont);
-		if (sms[cont] == '*')
+		else if (sms[cont] == '*')
 			cont = ft_maybe_estrelinha(content, sms, cont);
-		if (ft_isdigit(sms[cont])) //if tem um numero la, define o width
+		else if (ft_isdigit(sms[cont])) //if tem um numero la, define o width
 			cont = ft_maybe_width(content, sms, cont);
 		
 	}

@@ -6,20 +6,13 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/08 22:55:59 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/09 20:02:41 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
-
-int	ft_lenght_string(char *s, t_print *content, int len)
-{
-	len = ft_strlen(s);
-	if (content->prc > 0 && len > content->prc)
-		len = content->prc;
-	return (len);
-}
 
 void	ft_update_lenght(t_print *content, int len)
 {
@@ -34,6 +27,8 @@ void	ft_update_lenght(t_print *content, int len)
 	{
 		if (content->prc > len) //se a minha prc for maior q o len
 			content->prc -= len; //ela preenche só oq falta
+		else
+			content->prc = 0;
 		if (!content->is_zero)
 			content->wdt = content->wdt - content->prc - len; //result é o preenchimento correto
 	}
@@ -53,3 +48,63 @@ void	ft_right_string(t_print *content, int len)
 		while (content->wdt-- > len)
 			content->tl += write(1, " ", 1);
 }
+
+void	ft_change_zero(t_print *content)
+{
+	if (content->pnt || content->zero)
+	{
+		if (!content->prc)
+		{
+			while (content->zero && content->wdt-- > 0) 
+				content->tl += write(1, "0", 1);
+			while (!content->zero && content->wdt-- > 0)
+				content->tl += write(1, " ", 1);
+		}
+		else
+		{
+			content->wdt -= content->prc;
+			while (content->dash && content->prc-- > 0)
+				content->tl += write(1, "0", 1);
+			while (content->wdt-- > 0)
+				content->tl += write(1, " ", 1);
+			while (!content->dash && content->prc-- > 0)
+				content->tl += write(1, "0", 1);
+		}
+	}
+	if (content->prc && content->dash && !content->wdt)//caso tenha prc e dash, mas n tem width
+		while (!content->wdt && content->prc-- > 0)
+			content->tl += write(1, "0", 1);
+}
+
+void	ft_right(t_print *content)
+{
+	if (content->sign && (content->zero || content->dash || (!content->wdt && !content->prc)))
+	{
+		content->tl += write(1, "-", 1); //ajuste para por o sinal antes, lembrando q n tem wdt
+		content->sign = 0;
+	}
+	if (!content->dash)
+	{
+		while (!content->zero && --content->wdt > -1)// se n tiver zero completa cm espaço
+			content->tl += write(1, " ", 1);
+		while (content->zero && --content->wdt > -1)//se tiver zero completa cm espaço
+			content->tl += write(1, "0", 1);
+		if (content->sign)
+			content->tl += write (1, "-", 1);
+	}
+	while (--content->prc > -1)
+		content->tl += write(1, "0", 1);
+}
+
+void	ft_left(t_print *content)
+{
+	if (content->dash)
+	{
+		while (content->zero && --content->prc > -1)
+			content->tl += write(1, "0", 1);
+		while (--content->wdt > -1)
+			content->tl += write(1, " ", 1);
+	}
+}
+
+
