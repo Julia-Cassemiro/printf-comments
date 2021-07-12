@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+				/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
@@ -25,6 +25,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+
 int			ft_atoi (const char *str);
 int			ft_isalpha (int c);
 int			ft_isdigit(int c);
@@ -34,6 +35,7 @@ char		*ft_itoa(int n);
 char		*ft_utoa(unsigned int n);
 int			ft_numlen_base(unsigned long n, int base);
 char		*ft_hexatoi(char *str, unsigned long n, int base, int c);
+int			ft_putnbr_base(unsigned long n, char *base);
 
 
 #endif

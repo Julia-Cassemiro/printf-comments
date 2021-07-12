@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/09 22:03:16 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/12 15:20:22 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
  	  	ft_to_hexa(content, sms[cont] - 23);
 	else if (sms[cont] == '%')
 		ft_to_percent(content);
+	else if (sms[cont] == 'p')
+		ft_to_pointer(content);
 	return (cont);
 }
 

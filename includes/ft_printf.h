@@ -5,6 +5,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include <limits.h>
 # include "libft.h"
 
 //CRIA UMA ESTRUTURA IGUAL FOI CRIADO NA GNL
@@ -42,12 +43,14 @@ void	ft_to_int(t_print *content);
 void 	ft_to_hexa(t_print *content, int cont);
 void	ft_to_unsigned(t_print *content);
 void	ft_to_percent(t_print *content);
+void 	ft_to_pointer(t_print *content);
 int		ft_check_sign(t_print *content, int i);
 void	ft_check_width(t_print *content);
 void	ft_update_lenght(t_print *content, int len);
 int		ft_lenght_string(char *s, t_print *content, int len);
 void	ft_write_nothing(t_print *content);
 void	ft_write_zero(t_print *content);
+void	ft_nullp(t_print *content);
 void	ft_change_zero(t_print *content);
 void	ft_right_string(t_print *concontent, int len);
 void	ft_left(t_print *content);
