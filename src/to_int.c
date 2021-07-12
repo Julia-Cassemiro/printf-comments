@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:56 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/09 04:18:02 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:07:19 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_sign(t_print *content, int i)
 void	ft_write_zero(t_print *content)
 {
 	content->is_zero = 1; //zero
-	if (content->zero || content->pnt) //se tiver . ou 0
+	if ((content->wdt && content->zero) || content->pnt) //se tiver . ou 0
 	{
 		ft_change_zero(content); //retorna diferente
 		return ;
