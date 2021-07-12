@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:10:16 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/12 16:13:28 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/12 16:24:46 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	ft_putnbr_base(unsigned long n, char *base)
 	if (num >= base_len)
 	{
 		l += ft_putnbr_base(num / base_len, base);
-		write(1, base[num % base_len], 1);
+		write(1, &base[num % base_len], 1);
 	}
 	else if (num < base_len)
-		write(1, base[num], 1);
+		write(1, &base[num], 1);
 	return (l);
 }
