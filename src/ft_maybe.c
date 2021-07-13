@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/09 18:54:22 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/12 22:00:22 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int ft_maybe_zero(t_print *content, const char *sms, int cont)
 	count = 0;
 	cont++;
 	content->zero = 1;
+	while (sms[cont] == '0')
+		cont++;
 	if (ft_isdigit(sms[cont]))
 	{
 		count = ft_atoi(&sms[cont]);
