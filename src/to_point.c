@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:19:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/12 23:24:22 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/12 23:39:22 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void ft_to_pointer(t_print *content)
 		ft_nullp(content);
 		return ;
 	}
-	else
+	if(!(!p && content->pnt))
 		len += ft_numlen_base(p, 16);
 	if (!content->prc || content->wdt > content->prc)
 	{
-		ft_update_lenght(content, len);
+		ft_update_lenght(content, len); //3
 		ft_right(content);
 	}
 	else
 		content->prc = content->prc + 2 - len;
 	content->tl += write(1, "0x", 2);
-	while (content->prc -- > 0)
+	while (content->prc -- > 0) //tl 5
 		content->tl += write(1, "0", 1);
 	if (!(!p && content->pnt))
 		content->tl += ft_putnbr_base(p, "0123456789abcdef");
