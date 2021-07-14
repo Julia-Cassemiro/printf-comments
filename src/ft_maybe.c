@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/12 22:38:52 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 18:55:10 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 	//caso tenha ponto, o * é a precisão
 	{
 		content->prc = va_arg(content->args, int);  // se tem ponto, o * é o argumento da precisão então ele coloca na precisão
+		if (content->prc == 0 && content->zero == 1)
+		{
+			content->zero = 0;
+			content->porc = 1;
+		}
 		if (content->prc < 0)
 		{
 			content->prc = 0;			
