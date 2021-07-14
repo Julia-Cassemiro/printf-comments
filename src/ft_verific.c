@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 15:15:36 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:20:39 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 	else if (sms[cont] == 'p')
 		ft_to_pointer(content);
 	else
+	{
 		content->tl += write(1, "", 1);
+		cont--;
+	}
 	return (cont);
 }
 
 // while n é o cspdiuxX%
 int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos cmc o check, poisção
 {
-	while (!(ft_isalpha(sms[cont]) || (sms[cont] == '%')))
+	while (!(ft_isalpha(sms[cont]) || (sms[cont] == '%') || (sms[cont] == '\0')))
 	{
 		if (sms[cont] == '-')
 			cont = ft_maybe_tracinho(content, sms, cont);
@@ -50,7 +53,7 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos 
 		else if (ft_isdigit(sms[cont])) //if tem um numero la, define o width
 			cont = ft_maybe_width(content, sms, cont);
 	}
-	ft_verific_letter(content, sms, cont);
+	cont = ft_verific_letter(content, sms, cont);
 	ft_reset(content);
 	return (cont);
 }
