@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/12 18:09:16 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:42:33 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	ft_update_lenght(t_print *content, int len)
 
 void	ft_right_string(t_print *content, int len)
 {
+	while (content->zero && content->wdt-- > len)
+		content->tl += write(1, "0", 1);
 	if (content->prc &&content->prc < len)
 		while (content->wdt-- >content->prc)
 			content->tl += write(1, " ", 1);
