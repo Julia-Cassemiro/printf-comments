@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 17:20:39 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:51:39 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos 
 			cont = ft_maybe_estrelinha(content, sms, cont);
 		else if (ft_isdigit(sms[cont])) //if tem um numero la, define o width
 			cont = ft_maybe_width(content, sms, cont);
+		else
+			cont++;
 	}
 	cont = ft_verific_letter(content, sms, cont);
 	ft_reset(content);
