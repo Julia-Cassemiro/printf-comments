@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 14:22:09 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:25:49 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 	else if (sms[cont] == 'p')
 		ft_to_pointer(content);
 	else
-		write(1, " ", 1);
+		content->tl += write(1, "", 1);
 	return (cont);
 }
 
