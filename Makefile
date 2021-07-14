@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/12 15:18:28 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/13 13:10:19 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT_PATH	=		libft/
 LIBFT_LIB	=		libft.a
 
 SRC_FILES	= \
-	./src/brprint.c \
+	./src/ftprintf.c \
 	./src/ft_verific.c \
 	./src/ft_maybe.c \
 	./src/to_char.c \
