@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 18:55:10 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/14 22:00:26 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,11 @@ int	ft_maybe_precision(t_print *content, const char *sms, int cont)
 	count = 0;
 	cont++;
 	content->pnt = 1;
+	if (ft_isalpha(sms[cont]) || sms[cont] == '%')
+	{
+		if (content->prc == 0 && content->zero == 1)
+			content->zero = 0;
+	}
 	while (sms[cont] == '0' || sms[cont] == '-' || sms[cont] == '.')
 	{
 		cont++;

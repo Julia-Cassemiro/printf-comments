@@ -28,11 +28,11 @@ int main()
 
     static char *s_hidden = "hi low\0don't print me lol\0";
 
-    printf(" seu retorno %d", printf("%0*.*i, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+    printf(" seu retorno %d", printf("%01.d", 0));
+	printf("\n");
     printf("\n");
     printf("\n");
-    printf("\n");
-    printf(" meu retorno %d", ft_printf("%0*.*i, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c, a, b, e, a, b, d));
+    printf(" meu retorno %d", ft_printf("%01.d", 0));
     //ft_printf("teste |%5c|\n", 'a');
     return 0;
 }
