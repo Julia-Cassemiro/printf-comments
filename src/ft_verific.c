@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 13:40:38 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 17:51:39 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 20:01:46 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int 	ft_verific_letter(t_print *content, const char *sms, int cont)
 		content->tl += write(1, "", 1);
 		cont--;
 	}
+
+	
 	return (cont);
 }
 
@@ -42,7 +44,9 @@ int		ft_verific_symb(t_print *content, const char *sms, int cont)// aonde vamos 
 {
 	while (!(ft_isalpha(sms[cont]) || (sms[cont] == '%') || (sms[cont] == '\0')))
 	{
-		if (sms[cont] == '-')
+		if (sms[cont] == ' ')
+			cont = ft_maybe_space(content, cont);
+		else if (sms[cont] == '-')
 			cont = ft_maybe_tracinho(content, sms, cont);
 		else if (sms[cont] == '0')
 			cont = ft_maybe_zero(content, sms, cont);

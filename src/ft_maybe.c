@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 22:00:26 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 20:02:25 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_maybe_estrelinha(t_print *content, const char *sms, int cont)
 	//se n tem ponto, o * é o width
     if (!content->pnt)  // ou seja, se não tem ponto, n tem precisão (n tem um tamanho certo para impressão)
 	{
-		content->wdt = va_arg(content->args, int); // ela pega o proximo argumento
+		content->wdt = va_arg(content->args, int); // ela pega o proximo argumento, e define como wdt
 		ft_check_width(content);
 	}
 	else
@@ -137,4 +137,11 @@ int ft_maybe_tracinho(t_print *content, const char *sms, int cont)
 		cont++;
 	cont = ft_maybe_width(content, sms, cont); //vai la ver se tem width
 	return (cont);
+}
+
+int ft_maybe_space(t_print *content, int cont)
+{
+	content->spa = 1;
+	cont++;
+	return(cont);
 }

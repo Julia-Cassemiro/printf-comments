@@ -9,6 +9,7 @@ t_print *ft_reset(t_print *arrow)
 	arrow->sign = 0;
 	arrow->is_zero = 0;
 	arrow->dash = 0;
+	arrow->spa = 0;
 	arrow->porc = 0;
 	return (arrow);			     
 }
@@ -23,6 +24,7 @@ t_print *ft_initialise(t_print *arrow)
 	arrow->tl = 0;
 	arrow->is_zero = 0;
 	arrow->dash = 0;
+	arrow->spa = 0;
 	arrow->porc = 0;
 	return (arrow);
 }

@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/14 17:42:33 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 20:13:52 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	ft_update_lenght(t_print *content, int len)
 
 void	ft_right_string(t_print *content, int len)
 {
+	if (content->spa)
+		content->tl += write(1, " ", 1);
 	while (content->zero && content->wdt-- > len)
 		content->tl += write(1, "0", 1);
 	if (content->prc &&content->prc < len)
@@ -80,6 +82,8 @@ void	ft_change_zero(t_print *content)
 
 void	ft_right(t_print *content)
 {
+	if (content->spa)
+		content->tl += write(1, " ", 1);
 	if (content->sign && (content->zero || content->dash || (!content->wdt && !content->prc)))
 	{
 		content->tl += write(1, "-", 1); //ajuste para por o sinal antes, lembrando q n tem wdt
@@ -109,4 +113,12 @@ void	ft_left(t_print *content)
 	}
 }
 
-
+void	ft_check_width(t_print *content)
+{
+	if (content->wdt < 0)
+	{
+		content->wdt *= -1;
+		content->dash = 1;
+		content->zero = 0;
+	}
+}

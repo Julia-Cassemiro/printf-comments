@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:56 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/12 18:07:19 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 20:21:48 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_to_int(t_print *content)
 	}
 	if (i < 0)
 		i = check_sign(content, i);
-	nbr = ft_itoa(i); //transforma pra alphanumeric
+	nbr = ft_itoa(i);  //transforma pra alphanumeric
 	if (!nbr)
 		return;
 	len = ft_strlen(nbr);

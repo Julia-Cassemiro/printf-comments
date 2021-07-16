@@ -23,6 +23,7 @@ typedef struct s_print
 	int   dash;	 // - traço 
 	int   tl;	// total_length (return value)	  
 	int   sign;	// pos ou neg numero	   
+	int	  spa;
 	int   is_zero;	//  numer zero		
 	int	  porc;  	   
 }	t_print;
@@ -37,6 +38,7 @@ int		ft_maybe_width(t_print *content, const char *sms, int cont);
 int 	ft_maybe_tracinho(t_print *content, const char *sms, int cont);
 int		ft_maybe_precision(t_print *content, const char *sms, int cont);
 int		ft_maybe_estrelinha(t_print *content, const char *sms, int cont);
+int		ft_maybe_space(t_print *content, int cont);
 void	ft_to_char(t_print *content);
 void	ft_to_string(t_print *content);
 void	ft_to_int(t_print *content);
