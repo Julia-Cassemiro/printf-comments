@@ -6,14 +6,14 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/16 20:49:53 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/16 20:54:32 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		libftprintf.a
 SRC_PATH	=		src/
 
-LIBFT_PATH	=		libft
+LIBFT_PATH	=		libft/
 
 LIBFT_LIB	=		libft.a
 
@@ -64,4 +64,3 @@ fclean: 	clean
 re:         fclean all
 
 .PHONY:        all clean fclean re
-
