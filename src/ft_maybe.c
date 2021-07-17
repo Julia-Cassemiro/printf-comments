@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_maybe copy.c                                    :+:      :+:    :+:   */
+/*   ft_maybe.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 01:35:19 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:48:38 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,16 @@ int ft_maybe_plus(t_print *content, const char * sms, int cont)
 		content->plus = 0;
 	cont++;
 	while (sms[cont] == '+')
+		cont++;
+	return(cont);
+}
+
+int ft_maybe_hash(t_print *content, const char *sms, int cont)
+{
+	content->hash = 2;
+	content->plus = 0;
+	cont++;
+	while (sms[cont] == '#')
 		cont++;
 	return(cont);
 }

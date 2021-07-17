@@ -25,6 +25,7 @@ typedef struct s_print
 	int		tl;	// total_length (return value)		
 	int		sign;	// pos ou neg numero		 
 	int		spa;
+	int 	hash;
 	int		is_zero;	//  numer zero		
 	int		porc;  		 
 }	t_print;
@@ -41,6 +42,7 @@ int		ft_maybe_precision(t_print *content, const char *sms, int cont);
 int		ft_maybe_estrelinha(t_print *content, const char *sms, int cont);
 int		ft_maybe_plus(t_print *content, const char * sms, int cont);
 int		ft_maybe_space(t_print *content, int cont);
+int		ft_maybe_hash(t_print *content, const char *sms, int cont);
 void	ft_to_char(t_print *content);
 void	ft_to_string(t_print *content);
 void	ft_to_int(t_print *content);
@@ -51,16 +53,15 @@ void 	ft_to_pointer(t_print *content);
 int		ft_check_sign(t_print *content, int i);
 void	ft_check_width(t_print *content);
 void	ft_update_lenght(t_print *content, int len);
-int		ft_lenght_string(char *s, t_print *content, int len);
 void	ft_write_nothing(t_print *content);
 void	ft_write_zero(t_print *content);
 void	ft_nullp(t_print *content);
 void	ft_change_zero(t_print *content);
-void	ft_right_string(t_print *concontent, int len);
+void	ft_right_string(t_print *content, int len);
+void	ft_right_hexa(t_print *content, int cont);
 void	ft_left(t_print *content);
 void	ft_right(t_print *content);
 void 	ft_plus(t_print *content);
-
 
 
 # endif

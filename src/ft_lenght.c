@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 12:27:00 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:55:36 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,19 @@ void	ft_right(t_print *content)
 		content->sign = 0;
 		content->plus = 0; //!mudei aqui
 	}
-	if (content->wdt && content->plus)
-		content->wdt -= content->plus;
-	if (content->plus && (content->zero || content->dash || (!content->wdt && !content->prc)))
+	if (content->wdt && (content->plus || content->hash))
 	{
-		content->tl += write(1, "+", 1);
+		content->wdt -= content->plus;
+		content->wdt -= content->hash;
+	}
+	if (content->zero || content->dash || (!content->wdt && !content->prc))
+	{
+		if (content->plus)
+			content->tl += write(1, "+", 1);
+		if (content->hash)
+			content->tl += write(1, "0x", 2);
 		content->plus = 0;
+		content->hash = 0;
 	}
 	if (!content->dash)
 	{
@@ -81,6 +88,8 @@ void	ft_right(t_print *content)
 			content->tl += write (1, "-", 1);
 		if (content->plus)
 			content->tl += write(1, "+", 1);
+		if (content->hash)
+			content->tl += write(1, "0x", 2);
 	}
 	while (--content->prc > -1)
 		content->tl += write(1, "0", 1);
