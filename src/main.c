@@ -4,13 +4,13 @@
 
 int main()
 {
-    printf(" seu retorno %d\n", printf("|%#10x|", 123));
+    printf(" seu retorno %d\n", printf("|%x|", 17));
     printf(" seu retorno %d\n", printf("|%+#10X|", 123));
     printf(" seu retorno %d\n", printf("|%-#10X|", 123));
     printf(" seu retorno %d\n", printf("|%0#10x|", 123));
     printf(" meu retorno %d\n", ft_printf("|%#10x|", 123));
     printf(" meu retorno %d\n", ft_printf("|%+#10X|", 123));
-    printf(" meu retorno %d\n", ft_printf("|%-#10X|", 123));
+    printf(" meu retorno %d\n", ft_printf("|%x|", 17));
     printf(" meu retorno %d\n", ft_printf("|%0#10x|", 123));
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:46 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 15:11:36 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 15:25:55 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_right_hexa(t_print *content, int cont)
 			content->tl += write(1, "+", 1);
 		if (content->hash && cont + 23 == 'X')
 			content->tl += write(1, "0X", 2);
-		else
+		else if (content->hash && cont + 23 == 'x')
 			content->tl += write(1, "0x", 2);
 		content->plus = 0;
 		content->hash = 0;
@@ -55,7 +55,7 @@ void	ft_right_hexa(t_print *content, int cont)
 			content->tl += write(1, "+", 1);
 		if (content->hash && cont + 23 == 'X')
 			content->tl += write(1, "0X", 2);
-		else
+		else if (content->hash && cont + 23 == 'x')
 			content->tl += write(1, "0x", 2);
 	}
 	while (--content->prc > -1)
