@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 03:50:00 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 04:01:06 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,12 @@ void	ft_change_zero(t_print *content)
 			}
 			else
 				content->wdt -= content->prc;
-			if (content->zero && content->plus)
+			if (content->zero && content->plus && !content->is_zero)
 				content->tl += write(1, "+", 1);
 			
 			while (content->dash && content->prc-- > 0)
 				content->tl += write(1, "0", 1);
-			if (content->zero && content->plus)
+			if (!content->prc && content->zero && content->plus)
 			{
 				while (content->wdt-- > 0 )
 					content->tl += write(1, "0", 1);
@@ -101,6 +101,8 @@ void	ft_change_zero(t_print *content)
 			while (content->wdt-- > 0)
 				content->tl += write(1, " ", 1);
 			if (!content->zero && content->plus)
+				content->tl += write(1, "+", 1);
+			if (content->is_zero && content->plus)
 				content->tl += write(1, "+", 1);
 			while (!content->dash && content->prc-- > 0)
 				content->tl += write(1, "0", 1);
