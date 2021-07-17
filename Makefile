@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/16 20:54:32 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/17 12:43:18 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_FILES	= \
 	./src/to_unsigned.c \
 	./src/to_point.c \
 	./src/ft_lenght.c \
+	./src/ft_zero.c \
 
 SRC_OBJS     = ${SRC_FILES:.c=.o}
 

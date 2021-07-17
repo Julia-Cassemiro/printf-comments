@@ -59,6 +59,7 @@ void	ft_change_zero(t_print *content);
 void	ft_right_string(t_print *concontent, int len);
 void	ft_left(t_print *content);
 void	ft_right(t_print *content);
+void 	ft_plus(t_print *content);
 
 
 

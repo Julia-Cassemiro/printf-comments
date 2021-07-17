@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 04:21:00 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:27:00 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,68 +49,6 @@ void	ft_right_string(t_print *content, int len)
 	else
 		while (content->wdt-- > len)
 			content->tl += write(1, " ", 1);
-}
-
-void	ft_change_zero(t_print *content)
-{
-	if (content->pnt || content->zero)
-	{
-		if (content->spa)
-		{
-			content->tl += write(1, " ", 1);
-			content->wdt -= content->spa;
-		}
-		if (content->plus)
-		{
-			content->wdt -= content->plus;
-			content->prc -= content->plus;
-		}
-		if (!content->prc)
-		{
-			if (content->plus)
-				content->tl += write(1, "+", 1);
-			while (content->zero && content->wdt-- > 0) 
-				content->tl += write(1, "0", 1);
-			while (!content->zero && content->wdt-- > 0)
-				content->tl += write(1, " ", 1);
-		}
-		else
-		{
-			if (content->plus)
-			{
-				if (!content->zero && content->dash && content->is_zero)
-				{
-					content->tl += write(1, "+", 1);
-					content->plus = 0;
-				}
-				content->wdt -= content->prc + 1;
-				content->prc += 1;
-			}
-			else
-				content->wdt -= content->prc;
-			if (content->zero && content->plus && !content->dash)
-				content->tl += write(1, "+", 1);
-			while (content->dash && content->prc-- > 0)
-				content->tl += write(1, "0", 1);
-			if (!content->prc && content->zero && content->plus)
-			{
-				while (content->wdt-- > 0 )
-					content->tl += write(1, "0", 1);
-				content->plus = 0;
-			}
-			while (content->wdt-- > 0)
-				content->tl += write(1, " ", 1);
-			if (!content->zero && content->plus)
-				content->tl += write(1, "+", 1);
-			if (content->zero && content->is_zero && content->plus)
-				content->tl += write(1, "+", 1);
-			while (!content->dash && content->prc-- > 0)
-				content->tl += write(1, "0", 1);
-		}
-	}
-	if (content->prc && content->dash && !content->wdt)//caso tenha prc e dash, mas n tem width
-		while (!content->wdt && content->prc-- > 0)
-			content->tl += write(1, "0", 1);
 }
 
 void	ft_right(t_print *content)
