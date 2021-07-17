@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+d /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_zero.c                                          :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:43:40 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 12:43:44 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:56:42 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void ft_plus(t_print *content)
 	}
 	else
 	{
-		if (!content->zero && content->dash && content->is_zero)
+		if (content->dash && content->is_zero)
 		{
 			content->tl += write(1, "+", 1);
 			content->plus = 0;
@@ -41,8 +41,8 @@ void ft_plus(t_print *content)
 		content->wdt -= content->prc + 1;
 		content->prc += 1;
 	}
-	if (content->zero && content->plus && !content->dash)
-			content->tl += write(1, "+", 1);
+	if (!content->dash)
+		content->tl += write(1, "+", 1);
 	while (content->dash && content->prc-- > 0)
 		content->tl += write(1, "0", 1);
 	if (!content->prc && content->zero)
@@ -59,7 +59,6 @@ void ft_plus(t_print *content)
 		while (!content->wdt && content->prc-- > 0)
 			content->tl += write(1, "0", 1);	
 }
-
 void	ft_change_zero(t_print *content)
 {
 	if (content->pnt || content->zero)
