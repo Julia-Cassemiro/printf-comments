@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:43:40 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 13:24:48 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 13:45:53 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void ft_plus(t_print *content)
 	}
 	else
 	{
-		if (content->dash || !content->wdt)
+		if (content->dash || (content->zero && !content->pnt))
 		{
 			content->tl += write(1, "+", 1);
 			content->plus = 0;
@@ -41,18 +41,17 @@ void ft_plus(t_print *content)
 		content->wdt -= content->prc + 1;
 		content->prc += 1;
 	}
-	if (!content->dash)
-		content->tl += write(1, "+", 1);
 	while (content->dash && content->prc-- > 0)
 		content->tl += write(1, "0", 1);
 	if (!content->prc && content->zero)
 	{
 		while (content->wdt-- > 0 )
 			content->tl += write(1, "0", 1);
-		content->plus = 0;
 	}
 	while (content->wdt-- > 0)
 		content->tl += write(1, " ", 1);
+	if (!content->dash && content->plus)
+		content->tl += write(1, "+", 1);
 	while (!content->dash && content->prc-- > 0)
 		content->tl += write(1, "0", 1);
 	if (content->prc && content->dash && !content->wdt)//caso tenha prc e dash, mas n tem width
