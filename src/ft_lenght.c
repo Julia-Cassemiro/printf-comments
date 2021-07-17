@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 00:21:22 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 00:28:26 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ void	ft_right(t_print *content)
 	{
 		if (content->sign)
 			content->plus = 0;
-		else
-			content->tl += write(1, "+", 1);
 	}
 	if (content->sign && (content->zero || content->dash || (!content->wdt && !content->prc)))
 	{
@@ -118,7 +116,6 @@ void	ft_right(t_print *content)
 	while (--content->prc > -1)
 		content->tl += write(1, "0", 1);
 }
-
 
 void	ft_left(t_print *content)
 {
