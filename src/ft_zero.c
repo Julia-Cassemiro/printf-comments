@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:43:40 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 16:42:41 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 17:03:00 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void ft_plus(t_print *content)
 		content->tl += write(1, " ", 1);
 		content->wdt -= content->spa;
 	}
-	content->wdt -= content->plus;
-	if (content->prc > 1)
-		content->prc -= content->plus;
+	if (content->wdt > 1)
+		content->wdt -= content->plus;
 	if (!content->prc)
 	{
 		if (content->plus)
@@ -43,7 +42,7 @@ void ft_plus(t_print *content)
 			content->plus = 0;
 		}
 		content->wdt -= content->prc + 1;
-		if (content->prc > 1)
+		if (content->prc > 1 && content->wdt > 0)
 			content->prc += 1;
 	}
 	while (content->dash && content->prc-- > 0)
@@ -76,7 +75,8 @@ void	ft_change_zero(t_print *content)
 		if (content->spa)
 		{
 			content->tl += write(1, " ", 1);
-			content->wdt -= content->spa;
+			if (content->wdt > 1)
+				content->wdt -= content->spa;
 		}
 		if (!content->prc)
 		{
@@ -100,4 +100,3 @@ void	ft_change_zero(t_print *content)
 		while (!content->wdt && content->prc-- > 0)
 			content->tl += write(1, "0", 1);
 }
-
