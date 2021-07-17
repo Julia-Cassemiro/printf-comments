@@ -6,7 +6,7 @@
 #    By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 10:25:25 by jgomes-c          #+#    #+#              #
-#    Updated: 2021/07/17 12:43:18 by jgomes-c         ###   ########.fr        #
+#    Updated: 2021/07/17 14:04:26 by jgomes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC_PATH	=		src/
 
 LIBFT_PATH	=		libft/
 
-LIBFT_LIB	=		libft.a
+LIBFT_LIB	=		${LIBFT_PATH}libft.a
 
 SRC_FILES	= \
 	./src/ftprintf.c \
@@ -35,25 +35,24 @@ SRC_OBJS     = ${SRC_FILES:.c=.o}
 
 CC         = gcc
 
-CFLAGS         = -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 
 RM         = rm -f
 
-AR         = ar crs
+AR         = ar cr
 
-LIBFT_OBJS    = ${LIBFT_PATH}*.o
+LIBFT_OBJS    = ${LIBFT_PATH}
 
-LIBFTMAKE    = $(MAKE) -C ${LIBFT_PATH}
 
 all:				${NAME}
 
-${NAME}:    ${SRC_OBJS} pmake
-			${AR} ${NAME} ${SRC_OBJS} ${LIBFT_OBJS}
+${NAME}:    ${SRC_OBJS}
+			make -C ${LIBFT_PATH}
+			cp ${LIBFT_LIB} ${NAME}
+			mv ${LIBFT_LIB} ${NAME}
+			${AR} ${NAME} ${SRC_OBJS}
 
 bonus: all
-
-pmake:
-			${LIBFTMAKE}
 
 clean:
 			make -C ${LIBFT_PATH} clean
