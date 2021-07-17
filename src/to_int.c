@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:56 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/16 22:08:45 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 23:12:13 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	ft_write_zero(t_print *content)
 		return ;
 	}
 	ft_update_lenght(content, 1);
+	if (content->plus)
+		content->tl += write (1, "+", 1);
 	while (content->spa || (!content->dash && --content->wdt > 0))
 	{
 		content->tl += write(1, " ", 1);
