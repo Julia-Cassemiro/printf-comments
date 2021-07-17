@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/16 20:02:25 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:21:13 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,14 @@ int ft_maybe_space(t_print *content, int cont)
 {
 	content->spa = 1;
 	cont++;
+	return(cont);
+}
+
+int ft_maybe_plus(t_print *content, const char * sms, int cont)
+{
+	content->plus = 1;
+	cont++;
+	while (sms[cont] == '+')
+		cont++;
 	return(cont);
 }

@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:32:31 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/16 21:34:02 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:23:20 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 
 void	ft_update_lenght(t_print *content, int len)
 {
+	if (content->plus)
+	{
+		if (content->sign)
+			content->plus = 0;
+		else
+			content->tl += write(1, "+", 1);
+	}
 	if (content->sign) //if o é negativo
 	{
 		if (content->wdt) //wdt fica cm -1, pq um dos espaços é pro -

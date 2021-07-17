@@ -4,11 +4,11 @@
 
 int main()
 {
-    printf(" seu retorno %d", printf("|% d|", -1));
+    printf(" seu retorno %d", printf("|%+d|", 2));
 	printf("\n");
     printf("\n");
     printf("\n");
-    printf(" meu retorno %d", ft_printf("|% d|", -1));
+    printf(" meu retorno %d", ft_printf("|%+d|", 2));
     //ft_printf("teste |%5c|\n", 'a');
     return 0;
 }
