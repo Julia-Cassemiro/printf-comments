@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/16 22:21:13 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:28:26 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ int ft_maybe_tracinho(t_print *content, const char *sms, int cont)
 	}
 	content->dash = 1;
 	content->zero = 0;
+	content->plus = 0;
 	while (sms[cont] == '-' || sms[cont] == '0')
 		cont++;
 	cont = ft_maybe_width(content, sms, cont); //vai la ver se tem width
@@ -142,6 +143,8 @@ int ft_maybe_tracinho(t_print *content, const char *sms, int cont)
 int ft_maybe_space(t_print *content, int cont)
 {
 	content->spa = 1;
+	if (content->plus)
+		content->spa = 0;
 	cont++;
 	return(cont);
 }
@@ -149,6 +152,9 @@ int ft_maybe_space(t_print *content, int cont)
 int ft_maybe_plus(t_print *content, const char * sms, int cont)
 {
 	content->plus = 1;
+	content->spa = 0;
+	if (content->sign || content->dash)
+		content->plus = 0;
 	cont++;
 	while (sms[cont] == '+')
 		cont++;
