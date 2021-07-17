@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:43:40 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 15:50:09 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 16:42:41 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void ft_plus(t_print *content)
 	if (!content->prc)
 	{
 		if (content->plus)
+		{
 			content->tl += write(1, "+", 1);
+			content->plus = 0;
+		}
 		while (content->zero && content->wdt-- > 0) 
 			content->tl += write(1, "0", 1);
 		while (!content->zero && content->wdt-- > 0)

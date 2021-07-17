@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:24:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/17 14:48:38 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/17 16:11:35 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ int ft_maybe_plus(t_print *content, const char * sms, int cont)
 {
 	content->plus = 1;
 	content->spa = 0;
-	if (content->sign || content->dash)
+	if (content->sign)
 		content->plus = 0;
 	cont++;
 	while (sms[cont] == '+')
