@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:55:56 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/07/16 21:52:19 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:08:45 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	check_sign(t_print *content, int i)
 {
 	content->sign = 1;
+	content->spa = 0;
 	return (i * -1);
 }
 
