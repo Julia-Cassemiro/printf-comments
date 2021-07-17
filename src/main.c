@@ -4,11 +4,10 @@
 
 int main()
 {
-    printf(" seu retorno %d", printf("|%+8.5d|", 0));
+    printf(" seu retorno %d", printf("%+-8.5d", 34));
 	printf("\n");
     printf("\n");
     printf("\n");
-    printf(" meu retorno %d", ft_printf("|%+8.5d|", 0));
-    return 0;
+    printf(" meu retorno %d", ft_printf("%+-8.5d", 34));
 }
 // gcc -Wall -Wextra -Werror main.c brprint.c ft_lenght.c ft_maybe.c ft_verific.c to_string.c ../libft/ft*
