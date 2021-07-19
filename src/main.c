@@ -13,8 +13,8 @@ int main()
     printf(" euzinha %d\n", ft_printf("|%0 1.0d|", 0));
     printf(" original %d\n", printf("|%0 1.0d|", 0));
     printf("\n");
-    printf(" euzinha %d\n", ft_printf("|%- 1.0d|", 0));
-    printf(" original %d\n", printf("|%- 1.0d|", 0));
+    printf(" euzinha %d\n", ft_printf("|%0+1d", 0));
+    printf(" original %d\n", printf("|%0+1d", 0));
     printf("\n");
     printf(" euzinha %d\n", ft_printf("|%0+1.d|", 0));
     printf(" original %d\n", printf("|%0+1.d|", 0));
